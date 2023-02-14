@@ -15,8 +15,12 @@ public interface UserConvert {
 
     UserBO convert(UserDO userDO);
 
-    @Mappings({
-            @Mapping(source = "id", target = "userId")
+    /**
+     * 在对象转换时，我们可能会存在属性不是完全映射的情况，例如说属性名不同
+     * @param userDO
+     * @return
+     */
+    @Mappings({@Mapping(source = "id", target = "userId")
     })
     UserDetailBO convertDetail(UserDO userDO);
 
